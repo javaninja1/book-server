@@ -1,11 +1,8 @@
 package com.book.server.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
+import java.util.StringJoiner;
 
 @Entity
 @Table (name = "book")
@@ -17,16 +14,17 @@ public class Book {
 	
 	@Column (name = "title")
 	private String title;
-	
-	@Column (name = "author")
-	private String author;
-	
+
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "author_id", nullable = false)
+	private Author author;
+
 	
 	public Book() {
 		super();
 	}
 
-	public Book(long id, String title, String author) {
+	public Book(long id, String title, Author author) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -45,10 +43,20 @@ public class Book {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getAuthor() {
+
+	public Author getAuthor() {
 		return author;
 	}
-	public void setAuthor(String author) {
+
+	public void setAuthor(Author author) {
 		this.author = author;
+	}
+
+	@Override
+	public String toString() {
+		return new StringJoiner(", ", Book.class.getSimpleName() + "[", "]")
+				.add("id=" + id)
+				.add("title='" + title + "'")
+				.toString();
 	}
 }
