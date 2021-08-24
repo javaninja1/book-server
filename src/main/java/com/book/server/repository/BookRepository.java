@@ -14,7 +14,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     List<Book> findByAuthorId(long authorId);
     List<Book> findByTitleContaining(String title);
 
-//    @Query("select u.userName from User u inner join u.area ar where ar.idArea = :idArea")
 
     @Query("SELECT new com.book.server.response.BookResponse(b.title, a.name) from Book b inner join b.author a")
     public List<BookResponse> getBookAuthors();
