@@ -19,7 +19,4 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     public List<BookResponse> getBookAuthors();
 
 
-//    @Query("SELECT new com.book.server.response.BookResponse(b.title, b.title) from Book b")
-//    public List<BookResponse> getBookDetail();
-
 }

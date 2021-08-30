@@ -22,11 +22,6 @@ public class BookController {
 	@Autowired
 	private AuthorRepository authorRepository;
 
-//	@GetMapping ("books")
-//	public List<BookResponse> getBooks() {
-//		return bookRepository.getBookAuthors();
-//	}
-
 	@GetMapping ("books")
 	public List<BookResponse> getBooks() {
 		return bookRepository.getBookAuthors();
