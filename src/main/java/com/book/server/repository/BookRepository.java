@@ -15,11 +15,11 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     List<Book> findByTitleContaining(String title);
 
 
-    @Query("SELECT new com.book.server.response.BookResponse(b.title, a.name) from Book b inner join b.author a")
+    @Query("SELECT new com.book.server.response.BookResponse(b.id, b.title, a.name) from Book b inner join b.author a")
     public List<BookResponse> getBookAuthors();
 
 
-    @Query("SELECT new com.book.server.response.BookResponse(b.title, b.title) from Book b")
-    public List<BookResponse> getBookDetail();
+//    @Query("SELECT new com.book.server.response.BookResponse(b.title, b.title) from Book b")
+//    public List<BookResponse> getBookDetail();
 
 }

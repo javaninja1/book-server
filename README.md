@@ -17,4 +17,56 @@ References:
 https://www.baeldung.com/spring-data-jpa-query
 https://www.baeldung.com/jpa-queries-custom-result-with-aggregation-functions
 https://attacomsian.com/blog/spring-data-jpa-query-annotation
-https://www.stackchief.com/blog/Spring%20Data%20JPA%20CRUD%20Example
+https://www.stackchief.com/b
+https://www.baeldung.com/intro-to-querydsls
+https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/s
+https://medium.com/@bcarunmail/rest-api-best-practices-volume-1-83c6ecaddd8clog/Spring%20Data%20JPA%20CRUD%20Example
+
+
+
+https://spring.io/guides/tutorials/react-and-spring-data-rest/
+
+https://spring.io/guides/tutorials/rest/
+
+~~~~
+
+
+POST http:///
+Content-Type:
+
+
+
+###
+POST http://localhost:8080/api/book
+Content-Type: application/json
+
+{
+  "id": 4,
+  "title": "new book",
+  "authorId": 1
+}
+
+<> 2021-08-24T232319.500.json
+<> 2021-08-24T231652.500.json
+
+###
+###
+POST http://localhost:8080/api/book
+
+###
+DELETE http://localhost:8080/api/books/3
+
+###
+PUT http://localhost:8080/api/books/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "new book33",
+  "authorId": 1
+}
+
+<> 2021-08-24T234838.200.json
+###
+
+<> 2021-08-24T234612.400.html

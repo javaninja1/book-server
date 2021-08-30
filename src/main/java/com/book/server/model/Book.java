@@ -15,6 +15,9 @@ public class Book {
 	@Column (name = "title")
 	private String title;
 
+	@Column (name = "author_id", insertable = false, updatable = false)
+	private long authorId;
+
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "author_id", nullable = false)
 	private Author author;
@@ -30,7 +33,15 @@ public class Book {
 		this.title = title;
 		this.author = author;
 	}
-	
+
+	public long getAuthorId() {
+		return authorId;
+	}
+
+	public void setAuthorId(long authorId) {
+		this.authorId = authorId;
+	}
+
 	public long getId() {
 		return id;
 	}
