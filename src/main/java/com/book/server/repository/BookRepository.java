@@ -11,12 +11,12 @@ import java.util.List;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
 
-    List<Book> findByAuthorId(long authorId);
+    List<Book> findByAuthor(String author);
     List<Book> findByTitleContaining(String title);
 
 
-    @Query("SELECT new com.book.server.response.BookResponse(b.id, b.title, a.name) from Book b inner join b.author a")
-    public List<BookResponse> getBookAuthors();
+//    @Query("SELECT new com.book.server.response.BookResponse(b.id, b.title, a.name) from Book b inner join b.author a")
+//    public List<BookResponse> getBookAuthors();
 
 
 }

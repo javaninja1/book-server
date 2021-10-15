@@ -26,12 +26,12 @@ public class BookServerApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Author author1 = authorRepository.save(new Author("Author1"));
-		Author author2 = authorRepository.save(new Author("Author2"));
+//		Author author1 = authorRepository.save(new Author("Author1"));
+//		Author author2 = authorRepository.save(new Author("Author2"));
 
-		bookRepository.save(new Book(2,"book1", author1));
-		bookRepository.save(new Book(3,"book2", author2));
-		bookRepository.save(new Book(4,"book3", author2));
+		bookRepository.save(new Book(2,"book1", "author1"));
+		bookRepository.save(new Book(3,"book2", "author2"));
+		bookRepository.save(new Book(4,"book3", "author2"));
 	}
 	
 

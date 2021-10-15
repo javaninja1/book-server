@@ -21,8 +21,8 @@ https://www.stackchief.com/b
 https://www.baeldung.com/intro-to-querydsls
 https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/s
 https://medium.com/@bcarunmail/rest-api-best-practices-volume-1-83c6ecaddd8clog/Spring%20Data%20JPA%20CRUD%20Example
-
-
+https://www.baeldung.com/spring-interface-driven-controllers
+https://swagger.io/docs/specification/authentication/bearer-authentication/
 
 https://spring.io/guides/tutorials/react-and-spring-data-rest/
 
