@@ -11,22 +11,26 @@ import java.util.StringJoiner;
 @Entity
 @Table(name="books")
 public class Book {
+
 	@JsonProperty(value="id", required=true, index = 10)
 	@Schema(description = "UNIQUE Identifier.",
 			example = "1", required = true)
 	private long id;
+
 	@JsonProperty(value="title", required=true, index = 20)
 	@Schema(description = "Name of the title.",
 			example = "Effective Java", required = true)
 	@NotBlank
 	@Size(min = 0, max = 20)
 	private String title;
+
 	@JsonProperty(value="author", required=true, index = 30)
 	@Schema(description = "Name of the author.",
 			example = "Joshua Bloch", required = true)
 	@NotBlank
 	@Size(min = 0, max = 30)
 	private String author;
+
 	public  Book() {}
 
 	public Book(int id, String title, String author) {
@@ -35,7 +39,12 @@ public class Book {
 		this.author = author;
 	}
 
-	@Id
+    public Book(String book1, String author1) {
+		this.title = title;
+		this.author = author;
+    }
+
+    @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
 		return id;
@@ -43,6 +52,7 @@ public class Book {
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	@Column(name = "title", nullable = false)
 	public String getTitle() {
 		return title;
@@ -50,6 +60,7 @@ public class Book {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	@Column(name = "author", nullable = false)
 	public String getAuthor() {
 		return author;

@@ -1,6 +1,8 @@
 package com.book.server.controller;
 
 import com.book.server.model.Book;
+import com.book.server.view.BookRequest;
+import com.book.server.view.BookResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -29,7 +31,7 @@ public interface BookApi {
             @ApiResponse(responseCode = "404", description = "Book not found", content = @Content)})
     @RequestMapping(value = "/{id}", produces = {"application/json", "application/vnd.api+json"}, method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Book> findById(
+    public ResponseEntity<BookResponse> findById(
             @Parameter(description = "ID of book", required = true)
             @PathVariable long id)
             throws Exception;
@@ -38,30 +40,28 @@ public interface BookApi {
     @Operation(summary = "Get books", description = "Returns a books collection", tags = {"book"})
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public Collection<Book> findBooks();
+    public Collection<BookResponse> findBooks();
 
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Book updateBook(@PathVariable("id") final String id, @RequestBody final Book book);
+    public Book updateBook(@PathVariable("id") final long id, @RequestBody final BookRequest book);
 
     @PatchMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Book patchBook(@PathVariable("id") final String id, @RequestBody final Book book);
+    public ResponseEntity<BookResponse> putBook(@PathVariable("id") final long id, @RequestBody final BookRequest book);
 
     @Operation(summary = "Create book", description = "This can only be done by the logged in book.", tags = {"book"})
     @ApiResponses(value = {@ApiResponse(description = "successful operation", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = Book.class)), @Content(mediaType = "application/xml", schema = @Schema(implementation = Book.class))})})
     @PostMapping(value = "/", consumes = {"application/json", "application/xml", "application/x-www-form-urlencoded"})
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Book> postBook(
+    public ResponseEntity<BookResponse> postBook(
             @NotNull
             @Parameter(description = "Created book object", required = true)
-            @Valid @RequestBody Book body)
+            @Valid @RequestBody BookRequest body)
             throws Exception;
 
-    @RequestMapping(method = RequestMethod.HEAD, value = "/")
-    @ResponseStatus(HttpStatus.OK)
-    public Book headBook(long bookId);
+
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)

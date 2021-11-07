@@ -1,5 +1,8 @@
 # Book Store REST API
 
+### Swagger UI docs
+http://localhost:8080/swagger-ui/index.html
+
 ### Get all books
 GET http://localhost:8080/api/v1/books/
 
@@ -34,7 +37,8 @@ PATCH http://localhost:8080/api/v1/books/2
 Content-Type: application/json
 
 {
-"title": "book223"
+"title": "book223" ,
+"author": "author2"
 }
 
 
