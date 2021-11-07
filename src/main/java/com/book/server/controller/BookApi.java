@@ -22,9 +22,7 @@ import java.util.Collection;
 public interface BookApi {
 
     @Operation(summary = "Find book by ID", description = "Returns a single book", tags = {"book"},
-            security = {
-                    @SecurityRequirement(name = "BasicAuthentication"),
-                    @SecurityRequirement(name = "Bearer") })
+            security = { @SecurityRequirement(name = "Bearer") })
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "successful operation", content = @Content(schema = @Schema(implementation = Book.class))),
             @ApiResponse(responseCode = "400", description = "Invalid ID supplied", content = @Content),
@@ -42,9 +40,6 @@ public interface BookApi {
     @ResponseStatus(HttpStatus.OK)
     public Collection<Book> findBooks();
 
-
-    //When a client needs to replace an existing Resource entirely, they can use PUT.
-    //When they're doing a partial update, they can use HTTP PATCH.
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)

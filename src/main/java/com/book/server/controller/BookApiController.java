@@ -74,7 +74,6 @@ public class BookApiController implements BookApi {
 		return new ResponseEntity<Book>(bookRepository.save(body), HttpStatus.CREATED);
 	}
 
-
 	@Override
 	public Book headBook(long bookId) {
 		Optional<Book> byId = bookRepository.findById(bookId);
