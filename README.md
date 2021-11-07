@@ -1,5 +1,16 @@
 # Book Store REST API
 
+This project demonstrates following:
+
+* spring boot rest controller
+* REST methods for CRUD operations
+* spring data jpa
+* swagger UI docs
+* modelmapper
+* mockito testing framework
+* separation of client views from ORM objects for extensible API design
+* javax validation constraints
+
 ### Swagger UI docs
 http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
 
