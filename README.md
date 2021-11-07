@@ -11,6 +11,11 @@ This project demonstrates following:
 * separation of client views from ORM objects for extensible API design
 * javax validation constraints
 
+### Running the application
+```
+mvn spring-boot:run
+```
+
 ### Swagger UI docs
 http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
 
