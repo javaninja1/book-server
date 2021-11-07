@@ -1,6 +1,9 @@
 # Book Store REST API
 
 ### Swagger UI docs
+http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
+
+### default swagger reference
 http://localhost:8080/swagger-ui/index.html
 
 ### Get all books
